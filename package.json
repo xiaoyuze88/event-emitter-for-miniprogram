@@ -1,0 +1,15 @@
+{
+  "name": "event-emitter-for-miniprogram",
+  "version": "0.0.3",
+  "description": "event-emitter adapted for wechat miniprogram",
+  "main": "event-emitter.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/xiaoyuze88/event-emitter-for-miniprogram.git"
+  },
+  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xiaoyuze88/event-emitter-for-miniprogram/issues"
+  }
+}
