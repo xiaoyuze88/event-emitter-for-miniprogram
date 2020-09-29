@@ -3,7 +3,7 @@
  */
 const { defineProperty, create } = Object;
 const { hasOwnProperty } = Object.prototype;
-const descriptor = { configurable: true, enumerable: false, writable: true };
+const descriptor: PropertyDescriptor = { configurable: true, enumerable: false, writable: true };
 const namespace = '__ee__';
 
 function callable(fn) {
@@ -11,7 +11,7 @@ function callable(fn) {
   return fn;
 }
 
-module.exports = class EventEmitter {
+export default class EventEmitter {
   on(type, listener) {
     let data;
 

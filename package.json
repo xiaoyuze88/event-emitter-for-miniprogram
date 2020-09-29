@@ -1,8 +1,8 @@
 {
   "name": "event-emitter-for-miniprogram",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "event-emitter adapted for wechat miniprogram",
-  "main": "event-emitter.js",
+  "main": "lib/event-emitter.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/xiaoyuze88/event-emitter-for-miniprogram.git"
@@ -11,5 +11,16 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/xiaoyuze88/event-emitter-for-miniprogram/issues"
+  },
+  "scripts": {
+    "build": "rm -rf lib && npx tsc -p tsconfig.json -t es5 --outDir lib"
+  },
+  "dependencies": {
+    "tslib": "^2.0.1"
+  },
+  "devDependencies": {
+    "commander": "^6.0.0",
+    "terser": "^5.0.0",
+    "typescript": "^3.9.7"
   }
 }
