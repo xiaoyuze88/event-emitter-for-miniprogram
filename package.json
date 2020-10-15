@@ -1,6 +1,6 @@
 {
   "name": "event-emitter-for-miniprogram",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "event-emitter adapted for wechat miniprogram",
   "main": "event-emitter.js",
   "repository": {
