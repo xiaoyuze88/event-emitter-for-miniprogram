@@ -12,6 +12,15 @@ function callable(fn) {
   return fn;
 }
 
+function arrayClone(arr) {
+  var len = arr.length;
+	var copy = new Array(len);
+  for (var i = 0; i < len; ++i) {
+		copy[i] = arr[i];
+	}
+  return copy;
+}
+
 function EventEmitter() {}
 
 EventEmitter.prototype.on = function (type, listener) {
@@ -69,6 +78,9 @@ EventEmitter.prototype.emit = function (type, ...args) {
   if (!hasOwnProperty.call(this, namespace)) return;
   var listeners = this[namespace][type];
   if (!listeners || !listeners.length) return;
+
+  listeners = arrayClone(listeners);
+
   return Promise.all(listeners.map(listener => listener.apply(this, args)));
 }
 
