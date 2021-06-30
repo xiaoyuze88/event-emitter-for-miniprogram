@@ -74,14 +74,20 @@ EventEmitter.prototype.off = function (type, listener) {
   return this;
 }
 
-EventEmitter.prototype.emit = function (type, ...args) {
+EventEmitter.prototype.emit = function () {
+  var args = Array.prototype.slice.call(arguments);
+  var type = args.splice(0, 1);
+
   if (!hasOwnProperty.call(this, namespace)) return;
   var listeners = this[namespace][type];
   if (!listeners || !listeners.length) return;
 
   listeners = arrayClone(listeners);
+  var self = this;
 
-  return Promise.all(listeners.map(listener => listener.apply(this, args)));
+  return Promise.all(listeners.map(function (listener) {
+    return listener.apply(self, args);
+  }));
 }
 
 module.exports = EventEmitter;
